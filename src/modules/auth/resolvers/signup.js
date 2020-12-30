@@ -1,13 +1,13 @@
-const { UserInputError } = require('apollo-server-express')
+const { UserInputError, } = require('apollo-server-express')
 const User = require('../../../models/user')
 const bcrypt = require('bcrypt')
 
 const SALT_ROUNDS = 12
 
-const signup = async (_, { email, password, firstName, lastName }) => {
+const signup = async (_, { email, password, firstName, lastName, }) => {
   try {
     const existingUser = await User.findOne({
-      email
+      email,
     })
 
     if (existingUser) {
@@ -20,13 +20,13 @@ const signup = async (_, { email, password, firstName, lastName }) => {
       email,
       hashedPassword,
       firstName,
-      lastName
+      lastName,
     })
 
     return {
       ...user._doc,
       id: user._id,
-      hashedPassword: null
+      hashedPassword: null,
     }
   } catch (error) {
     throw new Error(error)

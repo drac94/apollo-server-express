@@ -3,31 +3,31 @@ const mongoose = require('mongoose')
 const userSchema = new mongoose.Schema({
   firstName: {
     type: String,
-    required: true
+    required: true,
   },
   lastName: {
     type: String,
-    required: true
+    required: true,
   },
   email: {
     type: String,
-    required: true
+    required: true,
   },
   hashedPassword: {
     type: String,
-    required: true
+    required: true,
   },
   created: {
     type: Date,
-    default: Date.now
+    default: Date.now,
   },
   changed: {
     type: Date,
-    default: Date.now
+    default: Date.now,
   },
   lastActive: {
-    type: Date
-  }
+    type: Date,
+  },
 })
 
 const User = mongoose.model('User', userSchema)

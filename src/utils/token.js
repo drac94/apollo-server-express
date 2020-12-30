@@ -5,11 +5,11 @@ const create = (userId) =>
   new Promise((resolve, reject) => {
     jwt.sign(
       {
-        userId
+        userId,
       },
       config.JWT_SECRET,
       {
-        expiresIn: config.JWT_LIFE_TIME
+        expiresIn: config.JWT_LIFE_TIME,
       },
       (error, token) => {
         if (error) {
@@ -38,5 +38,5 @@ const getDecodedToken = (token) =>
 
 module.exports = {
   create,
-  getDecodedToken
+  getDecodedToken,
 }

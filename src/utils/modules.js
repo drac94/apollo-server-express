@@ -1,4 +1,4 @@
-const { gql, makeExecutableSchema } = require('apollo-server-express')
+const { gql, makeExecutableSchema, } = require('apollo-server-express')
 const deepmerge = require('deepmerge')
 
 const directives = require('../directives')
@@ -9,11 +9,11 @@ const globalTypeDefs = gql`
   type Mutation
 `
 
-const makeExecutableSchemaFromModules = ({ modules }) => {
+const makeExecutableSchemaFromModules = ({ modules, }) => {
   let typeDefs = [globalTypeDefs, ...scalars.typeDefs, ...directives.typeDefs]
 
   let resolvers = {
-    ...scalars.resolvers
+    ...scalars.resolvers,
   }
 
   modules.forEach((module) => {
@@ -26,11 +26,11 @@ const makeExecutableSchemaFromModules = ({ modules }) => {
     typeDefs,
     resolvers,
     schemaDirectives: {
-      ...directives.schemaDirectives
-    }
+      ...directives.schemaDirectives,
+    },
   })
 }
 
 module.exports = {
-  makeExecutableSchemaFromModules
+  makeExecutableSchemaFromModules,
 }

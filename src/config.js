@@ -9,5 +9,5 @@ module.exports = {
   MONGODB_URI,
   WORKERS,
   JWT_LIFE_TIME,
-  JWT_SECRET
+  JWT_SECRET,
 }

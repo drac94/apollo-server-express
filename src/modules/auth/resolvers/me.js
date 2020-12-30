@@ -1,6 +1,6 @@
-const me = async (_, args, { user }) => ({
+const me = async (_, args, { user, }) => ({
   ...user._doc,
-  id: user.id
+  id: user.id,
 })
 
 module.exports = me

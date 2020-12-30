@@ -1,5 +1,5 @@
-const { GraphQLScalarType, Kind } = require('graphql')
-const { gql } = require('apollo-server-express')
+const { GraphQLScalarType, Kind, } = require('graphql')
+const { gql, } = require('apollo-server-express')
 
 const typeDef = gql`
   scalar DateTime
@@ -20,12 +20,12 @@ const DateTime = new GraphQLScalarType({
     }
 
     return null
-  }
+  },
 })
 
 module.exports = {
   typeDef,
   resolvers: {
-    DateTime
-  }
+    DateTime,
+  },
 }

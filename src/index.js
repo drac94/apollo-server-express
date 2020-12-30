@@ -10,7 +10,7 @@ const startServer = async function () {
   const mongooseOptions = {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    promiseLibrary: global.Promise
+    promiseLibrary: global.Promise,
   }
 
   try {
@@ -32,5 +32,5 @@ const startServer = async function () {
 // Let's make Node.js clustered for beter multi-core performance
 throng(startServer, {
   workers: config.WORKERS,
-  lifetime: Infinity
+  lifetime: Infinity,
 })

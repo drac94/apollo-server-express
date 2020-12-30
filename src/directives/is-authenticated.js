@@ -1,9 +1,9 @@
 const {
   gql,
   SchemaDirectiveVisitor,
-  AuthenticationError
+  AuthenticationError,
 } = require('apollo-server-express')
-const { defaultFieldResolver } = require('graphql')
+const { defaultFieldResolver, } = require('graphql')
 
 const typeDef = gql`
   directive @isAuthenticated on FIELD_DEFINITION
@@ -11,7 +11,7 @@ const typeDef = gql`
 
 class IsAuthenticatedDirective extends SchemaDirectiveVisitor {
   visitFieldDefinition (field) {
-    const { resolve = defaultFieldResolver } = field
+    const { resolve = defaultFieldResolver, } = field
 
     field.resolve = async function (...args) {
       const context = args[2]
@@ -27,5 +27,5 @@ class IsAuthenticatedDirective extends SchemaDirectiveVisitor {
 
 module.exports = {
   typeDef,
-  directive: IsAuthenticatedDirective
+  directive: IsAuthenticatedDirective,
 }

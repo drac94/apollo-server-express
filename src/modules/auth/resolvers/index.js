@@ -4,12 +4,12 @@ const signup = require('./signup')
 
 const resolvers = {
   Query: {
-    me
+    me,
   },
   Mutation: {
     login,
-    signup
-  }
+    signup,
+  },
 }
 
 module.exports = resolvers

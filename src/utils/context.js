@@ -23,5 +23,5 @@ const getUser = async (req) => {
 }
 
 module.exports = {
-  getUser
+  getUser,
 }
