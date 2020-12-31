@@ -4,7 +4,7 @@
   "main": "index.ts",
   "scripts": {
     "dev": "nodemon src/index.ts",
-    "lint": "eslint --ext .js,.ts .",
+    "lint": "eslint --fix --ext .js,.ts .",
     "format": "prettier --write './**/*.{js,md,ts}'",
     "test": "NODE_ENV=mocha mocha -r dotenv/config --recursive './{,!(node_modules)/**}/*.test.js'"
   },

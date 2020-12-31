@@ -5,8 +5,8 @@ var __importDefault =
     return mod && mod.__esModule ? mod : { default: mod };
   };
 Object.defineProperty(exports, '__esModule', { value: true });
-var me_1 = __importDefault(require('./me'));
 var login_1 = __importDefault(require('./login'));
+var me_1 = __importDefault(require('./me'));
 var signup_1 = __importDefault(require('./signup'));
 var resolvers = {
   Query: {

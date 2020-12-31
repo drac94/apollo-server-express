@@ -10,8 +10,8 @@ var __makeTemplateObject =
     return cooked;
   };
 Object.defineProperty(exports, '__esModule', { value: true });
-var graphql_1 = require('graphql');
 var apollo_server_express_1 = require('apollo-server-express');
+var graphql_1 = require('graphql');
 var typeDef = apollo_server_express_1.gql(
   templateObject_1 ||
     (templateObject_1 = __makeTemplateObject(['\n  scalar DateTime\n'], ['\n  scalar DateTime\n']))

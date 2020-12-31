@@ -183,7 +183,7 @@ var signup = function (_, _a) {
               firstName: user.firstName,
               email: user.email,
               created: user.created,
-              id: user._id,
+              id: user.id,
               hashedPassword: null,
             },
           ];

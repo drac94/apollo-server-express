@@ -17,7 +17,6 @@ var __importDefault =
 Object.defineProperty(exports, '__esModule', { value: true });
 var apollo_server_express_1 = require('apollo-server-express');
 var resolvers_1 = __importDefault(require('./resolvers'));
-// The schema (feel free to split these in a subfolder if you'd like)
 var typeDefs = apollo_server_express_1.gql(
   templateObject_1 ||
     (templateObject_1 = __makeTemplateObject(
@@ -30,7 +29,6 @@ var typeDefs = apollo_server_express_1.gql(
     ))
 );
 exports.default = {
-  // typeDefs is an array, because it should be possible to split your schema if the schema grows to big, you can just export multiple here
   typeDefs: [typeDefs],
   resolvers: resolvers_1.default,
 };

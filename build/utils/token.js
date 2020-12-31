@@ -19,7 +19,7 @@ var create = function (userId) {
       },
       function (error, token) {
         if (error) {
-          return reject(error);
+          reject(error);
         }
         resolve(token);
       }
@@ -31,10 +31,10 @@ var getDecodedToken = function (token) {
     jsonwebtoken_1.default.verify(token, config_1.default.JwtSecret, function (error, decoded) {
       var decodedToken = decoded;
       if (error) {
-        return reject(error);
+        reject(error);
       }
       if (!decodedToken.exp || !decodedToken.iat) {
-        return reject(new Error("Token had no 'exp' or 'iat' payload"));
+        reject(new Error("Token had no 'exp' or 'iat' payload"));
       }
       resolve(decodedToken);
     });

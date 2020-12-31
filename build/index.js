@@ -136,14 +136,14 @@ var __importDefault =
     return mod && mod.__esModule ? mod : { default: mod };
   };
 Object.defineProperty(exports, '__esModule', { value: true });
-var throng_1 = __importDefault(require('throng'));
-var mongoose_1 = __importDefault(require('mongoose'));
 var url_1 = __importDefault(require('url'));
+var mongoose_1 = __importDefault(require('mongoose'));
+var throng_1 = __importDefault(require('throng'));
 var app_1 = __importDefault(require('./app'));
 var config_1 = __importDefault(require('./config'));
 var mongoHost = new url_1.default.URL(config_1.default.MongoDbURI).host;
 var startServer = function () {
-  return __awaiter(this, void 0, void 0, function () {
+  return __awaiter(void 0, void 0, void 0, function () {
     var mongooseOptions, error_1;
     return __generator(this, function (_a) {
       switch (_a.label) {

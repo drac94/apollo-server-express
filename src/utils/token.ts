@@ -29,7 +29,7 @@ const create = (userId: mongoose.Types.ObjectId) =>
     );
   });
 
-const getDecodedToken = (token: string): Promise<any> =>
+const getDecodedToken = (token: string): Promise<Token> =>
   new Promise((resolve, reject) => {
     jwt.verify(token, config.JwtSecret, (error, decoded) => {
       const decodedToken = decoded as Token;

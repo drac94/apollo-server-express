@@ -136,12 +136,10 @@ var __importDefault =
     return mod && mod.__esModule ? mod : { default: mod };
   };
 Object.defineProperty(exports, '__esModule', { value: true });
-var express_1 = __importDefault(require('express'));
-// The reason why apollo-server-express is because later on for testing we use Supertest, which requires an app object
 var apollo_server_express_1 = require('apollo-server-express');
-// we don't have these yet, but don't worry we'll get there.
-var context_1 = __importDefault(require('./utils/context'));
+var express_1 = __importDefault(require('express'));
 var modules_1 = __importDefault(require('./modules'));
+var context_1 = __importDefault(require('./utils/context'));
 var server = new apollo_server_express_1.ApolloServer({
   schema: modules_1.default,
   context: function (_a) {

@@ -141,7 +141,7 @@ var me = function (_, args, _a) {
           lastName: user.lastName,
           firstName: user.firstName,
           email: user.email,
-          id: user._id,
+          id: user.id,
           created: user.created,
         },
       ];

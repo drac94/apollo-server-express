@@ -136,8 +136,8 @@ var __importDefault =
     return mod && mod.__esModule ? mod : { default: mod };
   };
 Object.defineProperty(exports, '__esModule', { value: true });
-var token_1 = __importDefault(require('./token'));
 var user_1 = __importDefault(require('../models/user'));
+var token_1 = __importDefault(require('./token'));
 var TOKEN_HEADER_NAME = 'x-token';
 var getUser = function (req) {
   return __awaiter(void 0, void 0, void 0, function () {

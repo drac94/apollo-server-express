@@ -178,15 +178,18 @@ var IsAuthenticatedDirective = /** @class */ (function (_super) {
   function IsAuthenticatedDirective() {
     return (_super !== null && _super.apply(this, arguments)) || this;
   }
+  // eslint-disable-next-line class-methods-use-this
   IsAuthenticatedDirective.prototype.visitFieldDefinition = function (field) {
+    var _this = this;
     var _a = field.resolve,
       resolve = _a === void 0 ? graphql_1.defaultFieldResolver : _a;
+    // eslint-disable-next-line no-param-reassign
     field.resolve = function () {
       var args = [];
       for (var _i = 0; _i < arguments.length; _i++) {
         args[_i] = arguments[_i];
       }
-      return __awaiter(this, void 0, void 0, function () {
+      return __awaiter(_this, void 0, void 0, function () {
         var context;
         return __generator(this, function (_a) {
           context = args[2];

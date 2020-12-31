@@ -1,4 +1,4 @@
-import { gql, makeExecutableSchema } from 'apollo-server-express';
+import { gql, makeExecutableSchema, IResolvers } from 'apollo-server-express';
 import deepmerge from 'deepmerge';
 import { DocumentNode } from 'graphql';
 
@@ -7,7 +7,7 @@ import scalars from '../scalars';
 
 type Module = {
   typeDefs: DocumentNode[];
-  resolvers: any;
+  resolvers: IResolvers;
 };
 
 const globalTypeDefs = gql`
@@ -18,7 +18,7 @@ const globalTypeDefs = gql`
 const makeExecutableSchemaFromModules = ({ modules }: { modules: Module[] }) => {
   let typeDefs = [globalTypeDefs, ...scalars.typeDefs, ...directives.typeDefs];
 
-  let resolvers = {
+  let resolvers: IResolvers = {
     ...scalars.resolvers,
   };
 

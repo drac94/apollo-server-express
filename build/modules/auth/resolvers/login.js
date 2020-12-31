@@ -138,9 +138,9 @@ var __importDefault =
 Object.defineProperty(exports, '__esModule', { value: true });
 var apollo_server_express_1 = require('apollo-server-express');
 var bcrypt_1 = __importDefault(require('bcrypt'));
-var token_1 = __importDefault(require('../../../utils/token'));
-var user_1 = __importDefault(require('../../../models/user'));
 var config_1 = __importDefault(require('../../../config'));
+var user_1 = __importDefault(require('../../../models/user'));
+var token_1 = __importDefault(require('../../../utils/token'));
 var login = function (_, _a) {
   var email = _a.email,
     password = _a.password;
@@ -166,7 +166,7 @@ var login = function (_, _a) {
           if (!isPasswordValid) {
             throw new apollo_server_express_1.AuthenticationError('Incorrect password');
           }
-          token = token_1.default.create(user._id);
+          token = token_1.default.create(user.id);
           return [
             2 /*return*/,
             {
@@ -174,7 +174,7 @@ var login = function (_, _a) {
                 lastName: user.lastName,
                 firstName: user.firstName,
                 email: user.email,
-                id: user._id,
+                id: user.id,
                 created: user.created,
               },
               token: token,
