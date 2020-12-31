@@ -4,8 +4,8 @@
   "main": "index.ts",
   "scripts": {
     "dev": "nodemon src/index.ts",
-    "lint": "eslint --fix --ext .js,.ts .",
-    "format": "prettier --write './**/*.{js,md,ts}'",
+    "lint": "eslint --fix --ext .ts .",
+    "format": "prettier --write './**/*.{ts}'",
     "test": "NODE_ENV=mocha mocha -r dotenv/config --recursive './{,!(node_modules)/**}/*.test.js'"
   },
   "husky": {
