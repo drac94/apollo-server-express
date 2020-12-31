@@ -1,8 +1,8 @@
-const isAuthenticated = require('./is-authenticated')
+import isAuthenticated from './is-authenticated';
 
-module.exports = {
+export default {
   typeDefs: [isAuthenticated.typeDef],
   schemaDirectives: {
     isAuthenticated: isAuthenticated.directive,
   },
-}
+};

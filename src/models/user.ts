@@ -1,4 +1,14 @@
-const mongoose = require('mongoose')
+import mongoose from 'mongoose';
+
+export type IUser = {
+  firstName: string;
+  lastName: string;
+  email: string;
+  hashedPassword: string;
+  created?: string;
+  changed?: string;
+  lastActive?: string;
+} & mongoose.Document;
 
 const userSchema = new mongoose.Schema({
   firstName: {
@@ -28,8 +38,8 @@ const userSchema = new mongoose.Schema({
   lastActive: {
     type: Date,
   },
-})
+});
 
-const User = mongoose.model('User', userSchema)
+const User = mongoose.model<IUser>('User', userSchema);
 
-module.exports = User
+export default User;

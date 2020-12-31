@@ -1,8 +1,8 @@
-const DateTime = require('./date-time')
+import DateTime from './date-time';
 
-module.exports = {
+export default {
   typeDefs: [DateTime.typeDef],
   resolvers: {
     ...DateTime.resolvers,
   },
-}
+};
