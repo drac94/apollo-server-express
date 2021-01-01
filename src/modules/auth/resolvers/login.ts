@@ -5,24 +5,25 @@ import config from '../../../config';
 import User from '../../../models/user';
 import tokenUtil from '../../../utils/token';
 
-type Params = {
+type Args = {
   email: string;
   password: string;
 };
 
-const login = async (_: any, { email, password }: Params) => {
+const login = async (_parent: any, args: Args) => {
+  const { email, password } = args;
   const user = await User.findOne({
     email,
   });
 
   if (!user) {
-    throw new AuthenticationError('User not found');
+    throw new AuthenticationError('The username or password you entered is incorrect');
   }
 
   const isPasswordValid = await bcrypt.compare(password, user.hashedPassword);
 
   if (!isPasswordValid) {
-    throw new AuthenticationError('Incorrect password');
+    throw new AuthenticationError('The username or password you entered is incorrect');
   }
 
   const token = tokenUtil.create(user.id);

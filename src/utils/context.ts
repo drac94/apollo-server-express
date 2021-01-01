@@ -1,12 +1,12 @@
 import { Request } from 'express';
 
-import User from '../models/user';
+import User, { IUser } from '../models/user';
 
 import tokenUtil from './token';
 
 const TOKEN_HEADER_NAME = 'x-token';
 
-const getUser = async (req: Request) => {
+const getUser = async (req: Request): Promise<IUser | null> => {
   if (!req) {
     return null;
   }

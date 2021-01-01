@@ -5,14 +5,15 @@ import User from '../../../models/user';
 
 const SALT_ROUNDS = 12;
 
-type Params = {
+type Args = {
   email: string;
   password: string;
   firstName: string;
   lastName: string;
 };
 
-const signup = async (_: any, { email, password, firstName, lastName }: Params) => {
+const signup = async (_parent: any, args: Args) => {
+  const { email, password, firstName, lastName } = args;
   try {
     const existingUser = await User.findOne({
       email,
