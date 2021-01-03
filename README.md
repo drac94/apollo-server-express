@@ -14,6 +14,7 @@
 
 ## Dev Tools
 
+- Nodemon
 - Prettier
 - EsLint
 - Husky
