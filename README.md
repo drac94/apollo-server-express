@@ -23,11 +23,12 @@
 
     .
     └── src
-        ├── directives          # Custom GrapqhQL directives http://spec.graphql.org/draft/#sec-Type-System.Directives
-        ├── models              # Mongo models
-        ├── modules             # GraphQL module (include schema and resolvers)
-        ├── scalars             # Custom GraphQL types http://spec.graphql.org/draft/#sec-Scalars
-        └── utils               # Shared functions acrross the project
+    |    ├── directives          # Custom GrapqhQL directives http://spec.graphql.org/draft/#sec-Type-System.Directives
+    |    ├── models              # Mongo models
+    |    ├── modules             # GraphQL module (include schema and resolvers)
+    |    ├── scalars             # Custom GraphQL types http://spec.graphql.org/draft/#sec-Scalars
+    |    └── utils               # Shared functions acrross the project
+    └── tests
 
 ## Scripts
 

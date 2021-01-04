@@ -6,7 +6,7 @@
     "dev": "nodemon src/index.ts",
     "lint": "eslint --fix --ext .ts .",
     "format": "prettier --write './**/*.{ts}'",
-    "test": "NODE_ENV=mocha mocha -r dotenv/config --recursive './{,!(node_modules)/**}/*.test.js'"
+    "test": "NODE_ENV=mocha mocha -r ts-node/register -r dotenv/config --recursive tests/**/*.test.ts --file tests/config.ts"
   },
   "husky": {
     "hooks": {
@@ -36,8 +36,11 @@
   "devDependencies": {
     "@types/bcrypt": "^3.0.0",
     "@types/express": "^4.17.9",
+    "@types/jest": "^26.0.19",
     "@types/jsonwebtoken": "^8.5.0",
+    "@types/mocha": "^8.2.0",
     "@types/node": "^14.14.17",
+    "@types/supertest": "^2.0.10",
     "@types/throng": "^5.0.0",
     "@typescript-eslint/eslint-plugin": "^4.11.1",
     "@typescript-eslint/parser": "^4.11.1",
